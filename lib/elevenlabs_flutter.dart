@@ -210,6 +210,7 @@ class ElevenLabsAPI {
           data: request,
           options: Options(
             responseType: ResponseType.bytes,
+            receiveTimeout: const Duration(minutes: 5),
           ),
         );
       }
