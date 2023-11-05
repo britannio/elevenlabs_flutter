@@ -16,7 +16,11 @@ class ElevenLabsAPI {
   ElevenLabsAPI._internal();
 
   // Dio client
-  final Dio _dio = Dio();
+  final Dio _dio = Dio(BaseOptions(
+    sendTimeout: const Duration(minutes: 3),
+    connectTimeout: const Duration(minutes: 3),
+    receiveTimeout: const Duration(minutes: 3),
+  ));
 
   /// Initialize API
   /// Takes [baseUrl] and [apiKey] as arguments
